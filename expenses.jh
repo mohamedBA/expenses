@@ -1,0 +1,75 @@
+entity DOCFrais {
+ 	tDocFrais Long,
+    totalFrais Float ,
+    dtSoumission LocalDate,
+    dtValidationPartiele LocalDate,
+    dtValidation LocalDate,
+    dtPayement LocalDate,
+    dtRefus LocalDate,
+ 	motifRefus String,
+    totalFroute Integer,
+    totalDepense Float,
+    tUserCre Integer,
+    tUserModif Integer,
+    tPUser Integer,
+    totalNbreKm Integer,
+}
+
+entity Depense {
+	tFDepense Integer,
+	tDocFrais Integer,
+	cTypeDepense String,
+    dtFdepense LocalDate,
+	remarque String,
+	montant Float,
+	mtAccp Float,
+	mtDepass Float,
+	plafond Float,
+}
+entity Employee{
+	tEmploye Integer,
+	tSocab Integer,
+	matEmpl String ,
+	idCarte Integer,
+	nom String ,
+	prenom String ,
+	nCin Integer ,
+    photo Blob,
+	dateDelivCin LocalDate,
+}
+entity EmployeFrais{
+	st String,
+	matVeh String,
+	marqueVeh  String,
+	km Integer ,
+	dernKm Integer ,
+	forfaitKm  Float ,
+	cForfait String,
+	typeVoiture  Integer ,
+}
+entity GroupEmployeFrais {
+plafond Float ,
+dtDeb LocalDate ,
+dtFin LocalDate ,
+tUserCre Integer ,
+tUserMod Integer ,
+dtCre LocalDate ,
+deMod LocalDate , 
+}
+entity Route {
+ tFDepense Integer ,
+ tDocFrais Integer   ,
+ cTypeDepense String  ,
+ dtFdepense LocalDate ,
+ remarque  String ,
+ montant Float  ,
+ mtAccp  Float ,
+ mtDepass Float ,
+plafond Float ,
+}
+// Set pagination options
+paginate Depense, DOCFrais, Employee with pagination
+dto * with mapstruct
+// Set service options to all except few
+service all with serviceImpl 
+
