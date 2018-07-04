@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span>Routes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-route" [routerLink]="['/route/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Route
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="routes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>T F Depense</span></th>
+            <th><span>T Doc Frais</span></th>
+            <th><span>C Type Depense</span></th>
+            <th><span>Dt Fdepense</span></th>
+            <th><span>Remarque</span></th>
+            <th><span>Montant</span></th>
+            <th><span>Mt Accp</span></th>
+            <th><span>Mt Depass</span></th>
+            <th><span>Plafond</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let route of routes ;trackBy: trackId">
+                <td><a [routerLink]="['/route', route.id, 'view' ]">{{route.id}}</a></td>
+                <td>{{route.tFDepense}}</td>
+                <td>{{route.tDocFrais}}</td>
+                <td>{{route.cTypeDepense}}</td>
+                <td>{{route.dtFdepense | date:'mediumDate'}}</td>
+                <td>{{route.remarque}}</td>
+                <td>{{route.montant}}</td>
+                <td>{{route.mtAccp}}</td>
+                <td>{{route.mtDepass}}</td>
+                <td>{{route.plafond}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/route', route.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/route', route.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'route/'+ route.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

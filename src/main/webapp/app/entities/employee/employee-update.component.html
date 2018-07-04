@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-employee-heading">Create or edit a Employee</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!employee.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="employee.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tEmploye">T Employe</label>
+                    <input type="number" class="form-control" name="tEmploye" id="field_tEmploye"
+                        [(ngModel)]="employee.tEmploye" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tSocab">T Socab</label>
+                    <input type="number" class="form-control" name="tSocab" id="field_tSocab"
+                        [(ngModel)]="employee.tSocab" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_matEmpl">Mat Empl</label>
+                    <input type="text" class="form-control" name="matEmpl" id="field_matEmpl"
+                        [(ngModel)]="employee.matEmpl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_idCarte">Id Carte</label>
+                    <input type="number" class="form-control" name="idCarte" id="field_idCarte"
+                        [(ngModel)]="employee.idCarte" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="employee.nom" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                        [(ngModel)]="employee.prenom" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nCin">N Cin</label>
+                    <input type="number" class="form-control" name="nCin" id="field_nCin"
+                        [(ngModel)]="employee.nCin" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_photo">Photo</label>
+                    <div>
+                        <div *ngIf="employee.photo" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(employee.photoContentType, employee.photo)">open</a><br>
+                            <span class="pull-left">{{employee.photoContentType}}, {{byteSize(employee.photo)}}</span>
+                            <button type="button" (click)="employee.photo=null;employee.photoContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_photo" (change)="setFileData($event, employee, 'photo', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="photo" id="field_photo"
+                        [(ngModel)]="employee.photo" />
+                    <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                        [(ngModel)]="employee.photoContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateDelivCin">Date Deliv Cin</label>
+                    <div class="input-group">
+                        <input id="field_dateDelivCin" type="text" class="form-control" name="dateDelivCin" ngbDatepicker  #dateDelivCinDp="ngbDatepicker" [(ngModel)]="employee.dateDelivCin"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDelivCinDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

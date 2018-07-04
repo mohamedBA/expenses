@@ -1,0 +1,51 @@
+{
+    "name": "Depense",
+    "fields": [
+        {
+            "fieldName": "tFDepense",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tDocFrais",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cTypeDepense",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dtFdepense",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "remarque",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "montant",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "mtAccp",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "mtDepass",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "plafond",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180704192024",
+    "entityTableName": "depense",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

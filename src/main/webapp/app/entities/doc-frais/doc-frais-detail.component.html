@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dOCFrais">
+            <h2><span>DOC Frais</span> {{dOCFrais.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>T Doc Frais</span></dt>
+                <dd>
+                    <span>{{dOCFrais.tDocFrais}}</span>
+                </dd>
+                <dt><span>Total Frais</span></dt>
+                <dd>
+                    <span>{{dOCFrais.totalFrais}}</span>
+                </dd>
+                <dt><span>Dt Soumission</span></dt>
+                <dd>
+                    <span>{{dOCFrais.dtSoumission}}</span>
+                </dd>
+                <dt><span>Dt Validation Partiele</span></dt>
+                <dd>
+                    <span>{{dOCFrais.dtValidationPartiele}}</span>
+                </dd>
+                <dt><span>Dt Validation</span></dt>
+                <dd>
+                    <span>{{dOCFrais.dtValidation}}</span>
+                </dd>
+                <dt><span>Dt Payement</span></dt>
+                <dd>
+                    <span>{{dOCFrais.dtPayement}}</span>
+                </dd>
+                <dt><span>Dt Refus</span></dt>
+                <dd>
+                    <span>{{dOCFrais.dtRefus}}</span>
+                </dd>
+                <dt><span>Motif Refus</span></dt>
+                <dd>
+                    <span>{{dOCFrais.motifRefus}}</span>
+                </dd>
+                <dt><span>Total Froute</span></dt>
+                <dd>
+                    <span>{{dOCFrais.totalFroute}}</span>
+                </dd>
+                <dt><span>Total Depense</span></dt>
+                <dd>
+                    <span>{{dOCFrais.totalDepense}}</span>
+                </dd>
+                <dt><span>T User Cre</span></dt>
+                <dd>
+                    <span>{{dOCFrais.tUserCre}}</span>
+                </dd>
+                <dt><span>T User Modif</span></dt>
+                <dd>
+                    <span>{{dOCFrais.tUserModif}}</span>
+                </dd>
+                <dt><span>T P User</span></dt>
+                <dd>
+                    <span>{{dOCFrais.tPUser}}</span>
+                </dd>
+                <dt><span>Total Nbre Km</span></dt>
+                <dd>
+                    <span>{{dOCFrais.totalNbreKm}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doc-frais', dOCFrais.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

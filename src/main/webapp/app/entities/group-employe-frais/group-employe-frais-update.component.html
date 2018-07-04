@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-group-employe-frais-heading">Create or edit a Group Employe Frais</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!groupEmployeFrais.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="groupEmployeFrais.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_plafond">Plafond</label>
+                    <input type="number" class="form-control" name="plafond" id="field_plafond"
+                        [(ngModel)]="groupEmployeFrais.plafond" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtDeb">Dt Deb</label>
+                    <div class="input-group">
+                        <input id="field_dtDeb" type="text" class="form-control" name="dtDeb" ngbDatepicker  #dtDebDp="ngbDatepicker" [(ngModel)]="groupEmployeFrais.dtDeb"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtDebDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtFin">Dt Fin</label>
+                    <div class="input-group">
+                        <input id="field_dtFin" type="text" class="form-control" name="dtFin" ngbDatepicker  #dtFinDp="ngbDatepicker" [(ngModel)]="groupEmployeFrais.dtFin"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtFinDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tUserCre">T User Cre</label>
+                    <input type="number" class="form-control" name="tUserCre" id="field_tUserCre"
+                        [(ngModel)]="groupEmployeFrais.tUserCre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tUserMod">T User Mod</label>
+                    <input type="number" class="form-control" name="tUserMod" id="field_tUserMod"
+                        [(ngModel)]="groupEmployeFrais.tUserMod" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtCre">Dt Cre</label>
+                    <div class="input-group">
+                        <input id="field_dtCre" type="text" class="form-control" name="dtCre" ngbDatepicker  #dtCreDp="ngbDatepicker" [(ngModel)]="groupEmployeFrais.dtCre"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtCreDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_deMod">De Mod</label>
+                    <div class="input-group">
+                        <input id="field_deMod" type="text" class="form-control" name="deMod" ngbDatepicker  #deModDp="ngbDatepicker" [(ngModel)]="groupEmployeFrais.deMod"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="deModDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
