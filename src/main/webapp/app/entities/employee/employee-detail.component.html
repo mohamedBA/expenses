@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span>Employee</span> {{employee.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>T Employe</span></dt>
+                <dd>
+                    <span>{{employee.tEmploye}}</span>
+                </dd>
+                <dt><span>T Socab</span></dt>
+                <dd>
+                    <span>{{employee.tSocab}}</span>
+                </dd>
+                <dt><span>Mat Empl</span></dt>
+                <dd>
+                    <span>{{employee.matEmpl}}</span>
+                </dd>
+                <dt><span>Id Carte</span></dt>
+                <dd>
+                    <span>{{employee.idCarte}}</span>
+                </dd>
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{employee.nom}}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{employee.prenom}}</span>
+                </dd>
+                <dt><span>N Cin</span></dt>
+                <dd>
+                    <span>{{employee.nCin}}</span>
+                </dd>
+                <dt><span>Photo</span></dt>
+                <dd>
+                    <div *ngIf="employee.photo">
+                        <a (click)="openFile(employee.photoContentType, employee.photo)">open</a>
+                        {{employee.photoContentType}}, {{byteSize(employee.photo)}}
+                    </div>
+                </dd>
+                <dt><span>Date Deliv Cin</span></dt>
+                <dd>
+                    <span>{{employee.dateDelivCin}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

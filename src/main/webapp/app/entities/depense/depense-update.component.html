@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-depense-heading">Create or edit a Depense</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!depense.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="depense.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tFDepense">T F Depense</label>
+                    <input type="number" class="form-control" name="tFDepense" id="field_tFDepense"
+                        [(ngModel)]="depense.tFDepense" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tDocFrais">T Doc Frais</label>
+                    <input type="number" class="form-control" name="tDocFrais" id="field_tDocFrais"
+                        [(ngModel)]="depense.tDocFrais" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cTypeDepense">C Type Depense</label>
+                    <input type="text" class="form-control" name="cTypeDepense" id="field_cTypeDepense"
+                        [(ngModel)]="depense.cTypeDepense" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtFdepense">Dt Fdepense</label>
+                    <div class="input-group">
+                        <input id="field_dtFdepense" type="text" class="form-control" name="dtFdepense" ngbDatepicker  #dtFdepenseDp="ngbDatepicker" [(ngModel)]="depense.dtFdepense"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtFdepenseDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_remarque">Remarque</label>
+                    <input type="text" class="form-control" name="remarque" id="field_remarque"
+                        [(ngModel)]="depense.remarque" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_montant">Montant</label>
+                    <input type="number" class="form-control" name="montant" id="field_montant"
+                        [(ngModel)]="depense.montant" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mtAccp">Mt Accp</label>
+                    <input type="number" class="form-control" name="mtAccp" id="field_mtAccp"
+                        [(ngModel)]="depense.mtAccp" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mtDepass">Mt Depass</label>
+                    <input type="number" class="form-control" name="mtDepass" id="field_mtDepass"
+                        [(ngModel)]="depense.mtDepass" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_plafond">Plafond</label>
+                    <input type="number" class="form-control" name="plafond" id="field_plafond"
+                        [(ngModel)]="depense.plafond" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

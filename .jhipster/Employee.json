@@ -1,0 +1,52 @@
+{
+    "name": "Employee",
+    "fields": [
+        {
+            "fieldName": "tEmploye",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tSocab",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "matEmpl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idCarte",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nCin",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "dateDelivCin",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180704192025",
+    "entityTableName": "employee",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

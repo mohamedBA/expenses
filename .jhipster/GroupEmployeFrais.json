@@ -1,0 +1,43 @@
+{
+    "name": "GroupEmployeFrais",
+    "fields": [
+        {
+            "fieldName": "plafond",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dtDeb",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dtFin",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tUserCre",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tUserMod",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dtCre",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "deMod",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180704192027",
+    "entityTableName": "group_employe_frais",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

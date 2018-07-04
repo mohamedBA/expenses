@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-doc-frais-heading">Create or edit a DOC Frais</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!dOCFrais.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="dOCFrais.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tDocFrais">T Doc Frais</label>
+                    <input type="number" class="form-control" name="tDocFrais" id="field_tDocFrais"
+                        [(ngModel)]="dOCFrais.tDocFrais" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_totalFrais">Total Frais</label>
+                    <input type="number" class="form-control" name="totalFrais" id="field_totalFrais"
+                        [(ngModel)]="dOCFrais.totalFrais" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtSoumission">Dt Soumission</label>
+                    <div class="input-group">
+                        <input id="field_dtSoumission" type="text" class="form-control" name="dtSoumission" ngbDatepicker  #dtSoumissionDp="ngbDatepicker" [(ngModel)]="dOCFrais.dtSoumission"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtSoumissionDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtValidationPartiele">Dt Validation Partiele</label>
+                    <div class="input-group">
+                        <input id="field_dtValidationPartiele" type="text" class="form-control" name="dtValidationPartiele" ngbDatepicker  #dtValidationPartieleDp="ngbDatepicker" [(ngModel)]="dOCFrais.dtValidationPartiele"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtValidationPartieleDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtValidation">Dt Validation</label>
+                    <div class="input-group">
+                        <input id="field_dtValidation" type="text" class="form-control" name="dtValidation" ngbDatepicker  #dtValidationDp="ngbDatepicker" [(ngModel)]="dOCFrais.dtValidation"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtValidationDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtPayement">Dt Payement</label>
+                    <div class="input-group">
+                        <input id="field_dtPayement" type="text" class="form-control" name="dtPayement" ngbDatepicker  #dtPayementDp="ngbDatepicker" [(ngModel)]="dOCFrais.dtPayement"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtPayementDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dtRefus">Dt Refus</label>
+                    <div class="input-group">
+                        <input id="field_dtRefus" type="text" class="form-control" name="dtRefus" ngbDatepicker  #dtRefusDp="ngbDatepicker" [(ngModel)]="dOCFrais.dtRefus"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dtRefusDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_motifRefus">Motif Refus</label>
+                    <input type="text" class="form-control" name="motifRefus" id="field_motifRefus"
+                        [(ngModel)]="dOCFrais.motifRefus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_totalFroute">Total Froute</label>
+                    <input type="number" class="form-control" name="totalFroute" id="field_totalFroute"
+                        [(ngModel)]="dOCFrais.totalFroute" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_totalDepense">Total Depense</label>
+                    <input type="number" class="form-control" name="totalDepense" id="field_totalDepense"
+                        [(ngModel)]="dOCFrais.totalDepense" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tUserCre">T User Cre</label>
+                    <input type="number" class="form-control" name="tUserCre" id="field_tUserCre"
+                        [(ngModel)]="dOCFrais.tUserCre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tUserModif">T User Modif</label>
+                    <input type="number" class="form-control" name="tUserModif" id="field_tUserModif"
+                        [(ngModel)]="dOCFrais.tUserModif" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tPUser">T P User</label>
+                    <input type="number" class="form-control" name="tPUser" id="field_tPUser"
+                        [(ngModel)]="dOCFrais.tPUser" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_totalNbreKm">Total Nbre Km</label>
+                    <input type="number" class="form-control" name="totalNbreKm" id="field_totalNbreKm"
+                        [(ngModel)]="dOCFrais.totalNbreKm" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

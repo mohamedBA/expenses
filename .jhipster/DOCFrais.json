@@ -1,0 +1,71 @@
+{
+    "name": "DOCFrais",
+    "fields": [
+        {
+            "fieldName": "tDocFrais",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "totalFrais",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dtSoumission",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dtValidationPartiele",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dtValidation",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dtPayement",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dtRefus",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "motifRefus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalFroute",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalDepense",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "tUserCre",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tUserModif",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tPUser",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalNbreKm",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180704192023",
+    "entityTableName": "doc_frais",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,47 @@
+{
+    "name": "EmployeFrais",
+    "fields": [
+        {
+            "fieldName": "st",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "matVeh",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "marqueVeh",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "km",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dernKm",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "forfaitKm",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cForfait",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeVoiture",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180704192026",
+    "entityTableName": "employe_frais",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

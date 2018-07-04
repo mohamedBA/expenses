@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-employe-frais-heading">Create or edit a Employe Frais</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!employeFrais.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="employeFrais.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_st">St</label>
+                    <input type="text" class="form-control" name="st" id="field_st"
+                        [(ngModel)]="employeFrais.st" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_matVeh">Mat Veh</label>
+                    <input type="text" class="form-control" name="matVeh" id="field_matVeh"
+                        [(ngModel)]="employeFrais.matVeh" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_marqueVeh">Marque Veh</label>
+                    <input type="text" class="form-control" name="marqueVeh" id="field_marqueVeh"
+                        [(ngModel)]="employeFrais.marqueVeh" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_km">Km</label>
+                    <input type="number" class="form-control" name="km" id="field_km"
+                        [(ngModel)]="employeFrais.km" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dernKm">Dern Km</label>
+                    <input type="number" class="form-control" name="dernKm" id="field_dernKm"
+                        [(ngModel)]="employeFrais.dernKm" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_forfaitKm">Forfait Km</label>
+                    <input type="number" class="form-control" name="forfaitKm" id="field_forfaitKm"
+                        [(ngModel)]="employeFrais.forfaitKm" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cForfait">C Forfait</label>
+                    <input type="text" class="form-control" name="cForfait" id="field_cForfait"
+                        [(ngModel)]="employeFrais.cForfait" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeVoiture">Type Voiture</label>
+                    <input type="number" class="form-control" name="typeVoiture" id="field_typeVoiture"
+                        [(ngModel)]="employeFrais.typeVoiture" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
